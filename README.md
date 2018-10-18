@@ -21,6 +21,8 @@ restic -r backup-repo init
 
 Put your password into a password.txt file in this git repo.
 
+Good idea: `chmod 600 password.txt`, so this file can't be read by other users
+on your system.
 
 ### `exclude.txt`
 
