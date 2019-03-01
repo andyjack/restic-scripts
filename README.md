@@ -44,7 +44,8 @@ export PASSWORD_FILE=password.txt
 ```
 MAILTO=me@mymail
 PATH=/bin:/usr/bin:/path/to/bin/restic
-0  9-19/2 * * 1-5 $HOME/local/work/restic-scripts/backup.sh --quiet
+0  9-19/2 * * 1-5 $HOME/local/work/restic-scripts/backup.sh --quiet $HOME
+55 23     * * *   $HOME/local/work/restic-scripts/backup.sh --quiet /etc 2>&1 | grep -v 'permission denied'
 0  0      * * *   $HOME/local/work/restic-scripts/forget.sh --quiet
 30 0      * * *   $HOME/local/work/restic-scripts/restic.sh check --quiet || /bin/echo "restic check failed!"
 ```
